@@ -39,14 +39,17 @@ export class App extends Component {
       this.setState({ currentImage: imageUrl })
     }
 
+    closeModal = () => {
+      this.setState({ currentImage: ' ' })
+    }
+
   render() {
     
     const {isShown, movies, currentImage} = this.state;
     return (
       <div>
-        { currentImage && <Modal imageUrl = { currentImage } /> }
-        { isShown ? 
-        (<GalleryList 
+        { isShown 
+        ? (<GalleryList 
           movies = {movies} 
           idToDelete = {this.deleteFilm}
           toggleStatus = {this.toggleStatus}
@@ -56,9 +59,14 @@ export class App extends Component {
           <Button 
             handler = { this.handler } 
             type="button" 
-            textContent="Show films list" 
+            textContent="Show films list"
           />
       )}
+          { currentImage && 
+                  <Modal 
+                  imageUrl = { currentImage } 
+                  closeModal = {this.closeModal}
+                  /> }
     </div>
    );     
   }
