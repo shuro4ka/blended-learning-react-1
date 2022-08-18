@@ -7,10 +7,12 @@ export const GalleryListItem = ({
     votes, 
     watched, 
     idToDelete, 
-    toggleStatus 
+    toggleStatus,
+    openModal,
 }) => {
     return (
         <li>
+            <img src={poster} width="200" alt="poster" />
             <h2>{title}</h2>
             <p>Votes: {votes}</p>
             <p>
@@ -19,8 +21,8 @@ export const GalleryListItem = ({
                     {watched.toString()}
                 </span>
             </p>
-            <button type="button" onClick={() => idToDelete (id)}>Delete</button>
-            <button type="button">Show poster</button>
+            <button type="button" onClick={() => idToDelete(id)}>Delete</button>
+            <button type="button" onClick={() => openModal(poster)}>Show poster</button>
         </li>  
     );  
 };

@@ -1,4 +1,3 @@
-import { type } from "@testing-library/user-event/dist/type";
 import PropTypes from "prop-types";
 
 //функциональний коипонент: именований експорт стрилочнои функции
