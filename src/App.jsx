@@ -40,7 +40,7 @@ export class App extends Component {
     }
 
     closeModal = () => {
-      this.setState({ currentImage: ' ' })
+      this.setState({ currentImage: '' })
     }
 
   render() {
